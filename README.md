@@ -10,7 +10,7 @@ File name represents a Product Name & an optional Version Number.
 
 Folder hierarchy currently has no meaning and may be simply used for organization.
 
-* Repeatition of the same file (somewhere within the hierarchy):
+* Repetition of the same file (somewhere within the hierarchy):
   * Undefined. Basically, the first file found matching desired product name & version number wins.
 
 ## Content
@@ -33,5 +33,5 @@ Every block, line by line, consist of:
   * Delimiter - at least one ` ` (space).
   * Texture UUID. It can be a name if it is readable and located inside the same link as the main script.
 
-* Repeatition of the same definition:
+* Repetition of the same definition:
   * The last one in the file wins.
