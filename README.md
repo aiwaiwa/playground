@@ -2,11 +2,13 @@
 
 ## File Names
 
-File name stands for a product & optional version number.
+File name represents a Product name & optional Version number.
 
 * Product names cannot contain `|` symbol.
 * Optional version number is anything between the last `[` and `]` symbols.
   * If version number is found, any space separators will be removed from the product name.
+
+Folder hierarchy currently has no meaning and may be simply used for organization.
 
 ## Content
 
@@ -20,7 +22,7 @@ Blocks consist of:
     * `<linkNameAlias>` is a domain-specific alias for a link name.
     * `<optionalDelimiter>` can be any of the following characters: `-`, `/`, `_`, `#`, `\`.
     * `<faceIndex>` is an integer between `0` and `7`.
-  * Delimiter - any amount of space character.
+  * Delimiter - at least one ` ` (space).
   * Texture UUID. It can be a name if it is readable and located inside the same link as the main script.
 
 ### Example
