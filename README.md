@@ -1,6 +1,6 @@
 # Format
 
-## File Names
+## File Name
 
 File name represents a Product Name & an optional Version Number.
 
