@@ -17,9 +17,11 @@ Folder hierarchy currently has no meaning and may be simply used for organizatio
 
 Any line beginning with a `|` character is a comment line.
 
-Empty line or several empty lines mean separation between the blocks. Comment lines do not contribute to block separations.
+Empty line or several empty lines, including lines containing just white space characters, mean separation between the blocks.
 
-Every block consist of:
+Comment lines do not contribute to block separations.
+
+Every block, line by line, consist of:
 
 * Attachment name or several of them separated by the `|` character.
   * Attachment names follow the same rules as the File Names above.
