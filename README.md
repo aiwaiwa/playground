@@ -15,7 +15,7 @@ Folder hierarchy currently has no meaning and may be simply used for organizatio
 
 ## Content
 
-Any line beginning with a `|` is a comment line.
+Any line beginning with a `|` character is a comment line.
 
 Empty line or several empty lines mean separation between the blocks.
 
