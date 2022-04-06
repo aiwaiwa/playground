@@ -2,7 +2,7 @@
 
 ## File Names
 
-File name represents a Product name & optional Version number.
+File name represents a Product Name & an optional Version Number.
 
 * Product names cannot contain `|` symbol.
 * Optional version number is anything between the last `[` and `]` symbols.
@@ -14,6 +14,8 @@ Folder hierarchy currently has no meaning and may be simply used for organizatio
   * Undefined. Basically, the first file found matching desired product name & version number wins.
 
 ## Content
+
+Any line beginning with a `|` is a comment line.
 
 Empty line or several empty lines mean separation between the blocks.
 
