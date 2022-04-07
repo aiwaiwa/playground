@@ -8,7 +8,7 @@ File name represents a Product Name & an optional Version Number.
 * Optional version number is anything between the last `[` and `]` symbols.
   * If version number is found, any space separators will be removed from the product name.
 
-Folder hierarchy currently has no meaning and may be simply used for organization.
+Folder hierarchy currently has no meaning and may be simply used for organization!
 
 * Repetition of the same file (somewhere within the hierarchy):
   * Undefined. Basically, the first file found matching desired product name & version number wins.
