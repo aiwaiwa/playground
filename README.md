@@ -28,6 +28,7 @@ Every block, line by line, consist of:
 * Each of the subsequent lines consist of:
   * `<linkNameAlias>` `<optionalDelimiter>` `<faceIndex>` - without spaces in between the parts.
     * `<linkNameAlias>` is a domain-specific alias for a link name.
+      * `<linkNameAlias>` is optional. If omitted, it means the prim in which the script resides.
     * `<optionalDelimiter>` can be any of the following characters: `-`, `/`, `_`, `#`, `\`. Again, space is not allowed.
     * `<faceIndex>` is an integer between `0` and `7`.
   * Delimiter - at least one ` ` (space).
