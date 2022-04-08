@@ -1,0 +1,32 @@
+Peach
+A | 0 | 5d939d59-e035-4234-9705-07f7a2771bc9 | 5d939d59-e035-4234-9705-07f7a2771bc9
+A | 2 | 5748decc-f629-461c-9a36-a35a221fe21f
+
+Apple
+B | 2 | 88ae580d-b3fb-ccb5-6a0e-6eaf19deb934
+B | 3 | 27145bc7-1ccf-cb4c-2d1b-5e5c9b35cd77
+A | 0 | c6c1ee60-72b5-4cf9-a75f-aaad4192ddf9
+
+Watermelon
+A | 0 | 5d939d59-e035-4234-9705-07f7a2771bc9
+
+Peach | Watermelon
+A | 0 | dd88438d-895e-4cc4-3557-f8b6870be6e5
+A | 7 | 06591f46-2eb9-4ab1-b0ab-f0cfc42cede8
+
+Milk
+C | 0 | ce69e349-4174-6c3f-667f-1624e363e509
+
+Date
+A | 0 | c0f8ddde-7121-046e-8bb1-4302c9359302
+A | 3 | fcd35208-0fb0-dd29-fad1-e3e5ad3dff5d
+
+Peach | Apple
+A | 0 | a75ce2ce-5f36-bd12-f2dd-650281b2c093
+Z | 0 | a75ce2ce-5f36-bd12-f2dd-650281b2c093
+
+Apple | Date
+A | 0 | 8e8f97f0-9145-ec17-c138-cfc875291b75
+
+Apple | Date | Peach
+A | 0 | 22d7df47-b6ee-a037-a288-5e30e86920f5
