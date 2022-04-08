@@ -41,7 +41,7 @@ Every block, line by line, consist of:
 * Each of the subsequent lines consist of:
   * `<linkNameAlias>` - a domain-specific alias for a link name.
     * To address a parent prim (where the in-world script resides), use a space or several spaces.
-      * You have to provide at least one space, otherwise it may be considered a comment line, starting with `|`.
+      * At least one psace has to be provided, otherwise the line will be considered a comment.
   * `|` Delimiter.
   * `<faceIndex>` - an integer between `0` and `7`.
   * `|` Delimiter.
