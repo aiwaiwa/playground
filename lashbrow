@@ -1,7 +1,7 @@
 lashbrow
-    | 0 | 004_ax_br
-    | 1 | Ax_Brow_shadow_basic
-    | 2 | Ax_Brow_shadow_basic
+    | 0 | 004_ax_br                  | normal            | specular
+    | 1 | Ax_Brow_shadow_basic       |                   | specular
+    | 2 | Ax_Brow_shadow_basic       | normal
     | 3 | Ax_Brow_shadow_basic
     | 4 | Lower Eyelashes
     | 5 | Glint Overlay on Eyeball
