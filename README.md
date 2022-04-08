@@ -23,16 +23,25 @@ Comment lines do not contribute to block separations.
 
 Every block, line by line, consist of:
 
-* Attachment name or several of them separated by the `|` character.
-  * Attachment names follow the same rules as the File Names above.
+* Attachment name or several of attachment names, separated by the `|` character.
+  * Each attachment name follows the same rules as the File Name, described above.
+* Examples:
+  * `Flower`
+  * `Flower | Stem`
+  * `Flower | Stem | Roots`
+
 * Each of the subsequent lines consist of:
-  * `<linkNameAlias>` `<optionalDelimiter>` `<faceIndex>` - without spaces in between the parts.
+  * `<linkNameAlias><optionalDelimiter><faceIndex>` - without spaces in between the parts.
     * `<linkNameAlias>` is a domain-specific alias for a link name.
       * `<linkNameAlias>` is optional. If omitted, it means parent prim (or prim where script resides)
     * `<optionalDelimiter>` can be any of the following characters: `-`, `/`, `_`, `#`, `\`. Again, space is not allowed.
     * `<faceIndex>` is an integer between `0` and `7`.
-  * Delimiter - at least one ` ` (space).
-  * Texture UUID. It can be a name if it is readable and located inside the same link as the main script.
+  * `|` Delimiter.
+  * Diffuse Texture. It can be a name if it is readable and located inside the same link as the main script.
+  * `|` Delimiter.
+  * Normal Texture. Same rule as for Diffuse Texture.
+  * `|` Delimiter.
+  * Specular Texture. Same rule as for Diffuse Texture.
 
 * Repetition of the same definition:
   * The last one in the file wins.
