@@ -30,7 +30,7 @@ Comment lines do not contribute to block separations, so they can freely appear 
 Every block, line by line, consist of:
 
 * First Line
-  * Attachment name or several attachment names. Behavior described below will apply to all attachments listed here, separated by '|' character.
+  * Attachment name or several attachment names. Behavior described below will apply to all attachments listed here, separated by `|` character.
     * Each attachment name follows the same rules as the File Name, described above.
   * Examples:
     * `Flower` - a prim named `Flower` is worn.
