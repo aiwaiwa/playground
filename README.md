@@ -1,6 +1,6 @@
 # Format
 
-Every file in this repository describes a product. The content consists of rules to apply to the faces of product parent (where the in-world script lives) and child prims.
+Every file in this repository describes a product. The content consists of rules to apply to the faces of the product parent (where the in-world script lives) and child prims.
 
 ## File Name
 
@@ -8,48 +8,52 @@ Each file name embeds a **Product Name** & an optional **Version Number**.
 
 * Without the version number portion, the whole file name yields the **Product Name**.
 * Optional **Version Number** is anything between the last `[` and `]` symbols.
-  * If **Version Number** appears in the file name, any spaces between the name and `[...]` part will be trimmed from the **Product Name**.
+  * If a **Version Number** appears in the file name, any spaces between the name and `[...]` part will be trimmed from the **Product Name** part.
+
+An in-world prim containing the script will use its Object name in attempt to retrieve the data that is meant for it. A prim name will be split into a Product Name & optional Version Number the same way as the File Name in this repository.
 
 Folder hierarchy currently has no meaning and may be simply used for organization.
 
 ### Repetition of the same file (somewhere within the hierarchy)
 
-**Undefined Behavior**. The first file found matching desired product name & version number will be accepted as the right source file.
+Currently it is **Undefined** which file to pick if there is a conflict.
+The first file found matching desired product name & version number will be accepted as the right source file.
 
-## Content
+## File Content
 
-Any line beginning with a `|` character is a comment line. Make sure to have it as a _very first character_.
+Any line beginning with a `|` character is a comment line. It has to be the _very first character_ of a line.
 
-Empty line or several empty lines, including lines containing just white space characters, mean separation between the blocks.
+Empty line or several empty lines, including lines containing only white space characters, serve as a separation between the blocks.
 
 Comment lines do not contribute to block separations, so they can freely appear on any line.
 
 Every block, line by line, consist of:
 
 * First Line
-  * Attachment name or several of attachment names, separated by the `|` character.
+  * Attachment name or several of attachment names, separated by the `|` character. This describes a behavior in which every attachment listed is found worn.
     * Each attachment name follows the same rules as the File Name, described above.
   * Examples:
-    * `Flower`
-    * `Flower | Stem`
-    * `Flower | Stem | Roots`
+    * `Flower` - a prim named `Flower` is worn.
+    * `Flower | Stem` - both `Flower` and `Stem` are worn.
+    * `Flower | Stem | Roots` - all three attachments are worn.
+    * `Flower [1.0] | Stem` - a `Flower [1.0]` and a `Stem` are worn.
 
 * Each of the subsequent lines consist of:
   * `<linkNameAlias>` - a domain-specific alias for a link name.
-    * The alias for a parent prim (where the in-world script resides) is a space or several spaces.
+    * To address a parent prim (where the in-world script resides), use a space or several spaces.
       * You have to provide at least one space, otherwise it may be considered a comment line, starting with `|`.
   * `|` Delimiter.
   * `<faceIndex>` - an integer between `0` and `7`.
   * `|` Delimiter.
-  * Diffuse Texture. It can be a name if it is readable and located inside the same link as the main script.
+  * Diffuse Texture. Either an UUID or a name if it is readable and located inside the same link as the main script.
   * `|` Delimiter.
   * Normal Texture. Same rule as for Diffuse Texture.
   * `|` Delimiter.
   * Specular Texture. Same rule as for Diffuse Texture.
-  * Examples (phrase `<space>` stands for space character ` `):
+  * Examples (phrase `<space>` stands for a space character ` `, otherwise not seen):
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9` - parent prim, face #0, diffuse map UUID.
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map UUID, normal map from inventory "normal_map_001".
-    * ` Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #0, diffuse map `fluffy`, no normal map, specular map `fluffy_sp`.
+    * `Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #0, diffuse map `fluffy`, no normal map, specular map `fluffy_sp`.
 
 Spaces in between any parts described above, between the `|` characters will be removed from both ends, which basically allows for spaces anywhere inside they names. This also help in decorating the lines like aligning the columns of data.
 
