@@ -55,13 +55,13 @@ Every block, line by line, consist of:
     * Absense of this texture means **removing specular texture**.
   * (Any additional values after any subsequent `|` delimiters will be trimmed.)
   * Examples (phrase `<space>` stands for a space character ` `, otherwise not seen):
-    * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9` - parent prim, face #0, diffuse map UUID.
-    * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map UUID, normal map from inventory "normal_map_001".
-    * `Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #0, diffuse map `fluffy`, no normal map, specular map `fluffy_sp`.
+    * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9` - parent prim, face #0, diffuse map as provided UUID, other maps will be set to none.
+    * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map as provided UUID, normal map from inventory "normal_map_001", specular map will be set to none.
+    * `Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #1, diffuse map `fluffy`, normal map set to none, specular map will be taken from the `fluffy_sp` inventory.
 
 Spaces surrounding `|` characters will be removed from both ends, which allows for spaces anywhere inside the link names or texture names. This also help in decorating the lines, ex. aligning the columns of data.
 
 
 ### Repetition of the same definition
 
-The last one in the file wins.
+The last one in the product file wins.
