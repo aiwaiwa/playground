@@ -49,10 +49,10 @@ Every block, line by line, consist of:
     * Absense of this texture means to apply **transparent texture**.
   * `|` Delimiter.
   * Normal Texture. Same rule as for Diffuse Texture.
-    * Absense of this texture means **no texture**. 
+    * Absense of this texture means **no action**. 
   * `|` Delimiter.
   * Specular Texture. Same rule as for Diffuse Texture.
-    * Absense of this texture means **no texture**.
+    * Absense of this texture means **no action**.
   * Examples (phrase `<space>` stands for a space character ` `, otherwise not seen):
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9` - parent prim, face #0, diffuse map UUID.
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map UUID, normal map from inventory "normal_map_001".
