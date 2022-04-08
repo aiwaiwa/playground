@@ -40,8 +40,8 @@ Every block, line by line, consist of:
 
 * Each of the subsequent lines consist of:
   * `<linkNameAlias>` - a domain-specific alias for a link name. Currently simply matches the link name (first one found in the linkset with this name wins).
-    * To address a parent prim (where the in-world script resides), use a space or several spaces.
-      * At least one psace has to be provided, otherwise the line will be considered a comment.
+    * Parent prim (where the in-world script resides) can be substituted with a space or several spaces.
+      * At least one space has to be provided, otherwise the line will be considered a comment.
   * `|` Delimiter.
   * `<faceIndex>` - an integer between `0` and `7`.
   * `|` Delimiter.
