@@ -1,6 +1,6 @@
 # Format
 
-Every file in this repository describes a product.
+Every file in this repository describes a product. The content consists of rules to apply to the faces of product parent (where the in-world script lives) and child prims.
 
 ## File Name
 
