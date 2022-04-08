@@ -46,10 +46,13 @@ Every block, line by line, consist of:
   * `<faceIndex>` - an integer between `0` and `7`.
   * `|` Delimiter.
   * Diffuse Texture. Either an UUID or a name if it is readable and located inside the same link as the main script.
+    * Absense of this texture means to apply **transparent texture**.
   * `|` Delimiter.
   * Normal Texture. Same rule as for Diffuse Texture.
+    * Absense of this texture means **no texture**. 
   * `|` Delimiter.
   * Specular Texture. Same rule as for Diffuse Texture.
+    * Absense of this texture means **no texture**.
   * Examples (phrase `<space>` stands for a space character ` `, otherwise not seen):
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9` - parent prim, face #0, diffuse map UUID.
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map UUID, normal map from inventory "normal_map_001".
