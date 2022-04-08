@@ -39,7 +39,7 @@ Every block, line by line, consist of:
     * `Flower [1.0] | Stem` - a `Flower [1.0]` and a `Stem` are worn. Whether a prim name contains zero or more than one spaces between `Flower` and `[1.0]`, or the rule does, they will still match each other.
 
 * Each of the subsequent lines consist of:
-  * `<linkNameAlias>` - a domain-specific alias for a link name.
+  * `<linkNameAlias>` - a domain-specific alias for a link name. Currently simply matches the link name (first one found in the linkset with this name wins).
     * To address a parent prim (where the in-world script resides), use a space or several spaces.
       * At least one psace has to be provided, otherwise the line will be considered a comment.
   * `|` Delimiter.
@@ -59,7 +59,7 @@ Every block, line by line, consist of:
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map UUID, normal map from inventory "normal_map_001".
     * `Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #0, diffuse map `fluffy`, no normal map, specular map `fluffy_sp`.
 
-Spaces in between any parts described above, between the `|` characters will be removed from both ends, which basically allows for spaces anywhere inside they names. This also help in decorating the lines like aligning the columns of data.
+Spaces surrounding `|` characters will be removed from both ends, which allows for spaces anywhere inside the link names or texture names. This also help in decorating the lines, ex. aligning the columns of data.
 
 
 ### Repetition of the same definition
