@@ -51,7 +51,7 @@ Every block, line by line, consist of:
     * `<space> | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, #0 face, diffuse map UUID, normal map from inventory "normal_map_001".
     * ` Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #0, diffuse map `fluffy`, no normal map, specular map `fluffy_sp`.
 
-Spaces in between any parts described above, between the `|` characters will be removed from the ends, which basically allows for spaces within the names.
+Spaces in between any parts described above, between the `|` characters will be removed from both ends, which basically allows for spaces anywhere inside they names. This also help in decorating the lines like aligning the columns of data.
 
 
 ### Repetition of the same definition
