@@ -1,6 +1,6 @@
 # Format
 
-Every file in this repository describes a product. The content consists of rules to apply to the faces of the product prims, whether a parent (where the in-world script lives) or a child prim, based on availability of other worn (non-HUD) attachments.
+Every file in this repository describes a product. The content consists of rules to apply to the faces of the product prims, whether a parent (where the in-world script lives) or a child prim, based on availability of non-HUD attachments.
 
 ## File Name
 
@@ -64,3 +64,14 @@ Every block, line by line, consist of:
 ### Repetition of the same definition
 
 The last matching rule in the product file wins.
+
+## How it works
+
+In its basic form, a file may describe default textures when corresponding product is the only one attached. Simply put the product name as the first-line rule, and then mention the textures affected. This may include applying transparency by default.
+
+> As this rule implies the product being attached, simply placing it on the ground will set to transparent any mentioned prims and faces. To override this, a copy of the same product can be temporarily attached.
+
+Only the prims and faces mentioned somewhere in the file will be modified.
+
+Any other face texture settings like texture rotation or texture repeats will not be changed.
+
