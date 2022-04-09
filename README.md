@@ -4,7 +4,7 @@ Every file in this repository describes a product. The content consists of rules
 
 ## File Name
 
-Each file name embeds a **Product Name** & an optional **Version Number**.
+Each file name embeds a **Product Name** & an optional **Version Number**. `README.md` file is skipped from search.
 
 * Without the version number portion, the whole file name yields the **Product Name**.
 * Optional **Version Number** is anything between the last `[` and `]` symbols.
