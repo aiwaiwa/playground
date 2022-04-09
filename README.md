@@ -39,7 +39,7 @@ Every block, line by line, consist of:
     * `Flower | Stem | Roots` - all three attachments are worn.
     * `Flower [1.0] | Stem` - a `Flower [1.0]` and a `Stem` are worn. Whether a prim name contains zero or more than one spaces between `Flower` and `[1.0]`, or the rule does, they will still match each other.
 
-* Each of the subsequent lines - texture data - consists of `|`-separated lists of data (spaces around `|` may be added for readibility):
+* Each of the subsequent lines - texture data - consists of `|`-separated fields (spaces around `|` may be added for readibility):
   * `<linkNameAlias>` - a domain-specific alias for a link name. Currently simply matches the link name (first one found in the linkset with this name wins).
     * Instead of naming the parent prim - the where the in-world script resides - it can be substituted with a space or several spaces.
       * At least one space has to be provided, otherwise the line will be considered a comment.
