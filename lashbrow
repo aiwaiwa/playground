@@ -2,8 +2,8 @@ lashbrow
     | 0 | 003_ax_br                  |      | 
     | 1 | glint       |                   | 
     | 2 | overlay       | 
-    | 3 | lashes
+    | 3 | Ax_Brow_shadow_basic
     | 4 | Ax_Brow_shadow_basic
-    | 5 | Ax_Brow_shadow_basic
-    | 6 | Ax_Brow_shadow_basic
+    | 5 | lashes
+    | 6 | lashes
     | 7 | lashes
