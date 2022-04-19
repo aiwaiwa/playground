@@ -63,19 +63,21 @@ Each line consists of `|`-separated fields (spaces around `|` may be added for r
 * `<faceIndex>` - an integer between `0` and `7`.
 * `|` character as delimiter.
 * **Diffuse Texture**. Either an UUID or a name of a texture inventory item placed along with the in-world script. The name can contain spaces.
-  * Non-mentioned texture will be treated as a command to apply **transparent texture**.
-  * The suffix starting with the last singular `/` is treated as an **Alpha Mode** changer only if it matches one of the following:
+  * Empty value will be treated as a command to apply the **transparent texture** plus **Alpha Mode** set to Masking 255.
+  * The optional suffix starting with the last singular `/` is treated as an **Alpha Mode** changer only if it matches one of the following:
     * `/n` - **None** (alpha channel is ignored).
     * `/b` - **Alpha Blending**.
+      * It is also a default for a non-empty texture value, if no other `/` is specified.
     * `/m200` - **Alpha Masking** with a number between `0` and `255`.
       * Add spaces to your liking: `/ m 200`, `/ m200`, etc.
+      * `/m255` is a default for an empty texture value, if no other `/` is specified.
     * `/e` - **Emissive**.
 * `|` character as delimiter.
 * **Normal Texture** - follows the same rule as for Diffuse Texture (except the `/` suffix portion).
-  * Non-mentioned texture will be treated as a command to **remove normal texture**. 
+  * Empty value will be treated as a command to **remove normal texture**. 
 * `|` character as delimiter.
 * **Specular Texture** - follows the same rule as for Diffuse Texture (except the `/` suffix portion).
-  * Non-mentioned texture will be treated as a command to **remove specular texture**.
+  * Empty value texture will be treated as a command to **remove specular texture**.
 * (Any additional data after any subsequent `|` delimiters will be ignored.)
 
 ##### Examples
