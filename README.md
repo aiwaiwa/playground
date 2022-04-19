@@ -58,7 +58,7 @@ Each line after the first in the block describes a texture data until the block 
 Each line consists of `|`-separated fields (spaces around `|` may be added for readability):
 
 * `<linkNameAlias>` - a domain-specific alias for a link name. Currently simply matches the link name (first one found in the link-set with this name wins).
-  * Parent prim alias - where the in-world script resides - an asterisk symbol (`*`).
+  * Parent prim alias - where the in-world script resides - either an empty value or an asterisk symbol (`*`).
 * `|` character as delimiter.
 * `<faceIndex>` - an integer between `0` and `7`.
 * `|` character as delimiter.
