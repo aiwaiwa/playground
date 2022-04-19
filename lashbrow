@@ -1,17 +1,17 @@
-lashbrow
-    | 0 | 003_ax_br
-    | 1 | glint
-    | 2 |
-    | 3 |
-    | 4 | overlay
-    | 5 | 473c0e0d-6479-8981-2a84-9931d3c03690
-    | 6 | 473c0e0d-6479-8981-2a84-9931d3c03690
-    | 7 | 473c0e0d-6479-8981-2a84-9931d3c03690
+*
+  | 0 | 003_ax_br
+  | 1 | glint
+  | 2 |
+  | 3 |
+  | 4 | overlay
+  | 5 | 473c0e0d-6479-8981-2a84-9931d3c03690
+  | 6 | 473c0e0d-6479-8981-2a84-9931d3c03690
+  | 7 | 473c0e0d-6479-8981-2a84-9931d3c03690
 
 
-lashbrow | brow piercing bars right
-    | 2 | Ax_brow piercing bars right_shadow
+* | brow piercing bars right
+  | 2 | Ax_brow piercing bars right_shadow
    
 
-lashbrow | brow piercing bars left
-    | 3 | Ax_brow piercing bars left_shadow  
+* | brow piercing bars left
+  | 3 | Ax_brow piercing bars left_shadow
