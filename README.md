@@ -63,16 +63,17 @@ Each line consists of `|`-separated fields (spaces around `|` may be added for r
 * `<faceIndex>` - an integer between `0` and `7`.
 * `|` character as delimiter.
 * **Diffuse Texture**. Either an UUID or a name of a texture inventory item placed along with the in-world script. The name can contain spaces.
-  * Empty value will be treated as a command to apply the **transparent texture** plus **Alpha Mode** set to Masking 255.
-  * Special baked textures names (upper case only!) will be transformed into their corresponding internal UUIDs and **Alpha Mode** None, unless specified differently:
+  * Empty value is treated as a **transparent texture** plus **Alpha Mode** set to Masking 255 (`/b` suffix).
+  * The following special baked textures names (upper case only!) are transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), if another suffix is not specifically mentioned:
     * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
-  * The optional suffix starting with the last singular `/` is treated as an **Alpha Mode** changer only if it matches one of the following:
+  * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
     * `/n` - **None** (alpha channel is ignored).
+      * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
     * `/b` - **Alpha Blending**.
-      * It is also a default for a non-empty texture value, if no other `/` is specified.
+      * If the suffix is missing, `/b` is auto-applied to all non-empty texture values.
     * `/m200` - **Alpha Masking** with a number between `0` and `255`.
-      * Add spaces to your liking: `/ m 200`, `/ m200`, etc.
-      * `/m255` is a default for an empty texture value, if no other `/` is specified.
+      * If the suffix is missing, `/m255` is auto-applied to all empty texture value.
+      * Spaces between `/`, `m` and the number are ignored.
     * `/e` - **Emissive**.
 * `|` character as delimiter.
 * **Normal Texture** - follows the same rule as for Diffuse Texture (except the `/` suffix portion).
