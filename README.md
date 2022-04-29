@@ -64,6 +64,8 @@ Each line consists of `|`-separated fields (spaces around `|` may be added for r
 * `|` character as delimiter.
 * **Diffuse Texture**. Either an UUID or a name of a texture inventory item placed along with the in-world script. The name can contain spaces.
   * Empty value will be treated as a command to apply the **transparent texture** plus **Alpha Mode** set to Masking 255.
+  * Special baked textures names (upper case only!) will be transformed into their corresponding internal UUIDs and **Alpha Mode** None, unless specified differently:
+    * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
   * The optional suffix starting with the last singular `/` is treated as an **Alpha Mode** changer only if it matches one of the following:
     * `/n` - **None** (alpha channel is ignored).
     * `/b` - **Alpha Blending**.
