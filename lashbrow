@@ -4,9 +4,9 @@
   | 2 |
   | 3 |
   | 4 | overlay | normaloverlay
-  | 5 | lashes | normallash | overlayspec
-  | 6 | lashes | normallash | overlayspec
-  | 7 | lashes | normallash | overlayspec
+  | 5 | [face #0]: 92720b3b-02ee-c700-0528-60ac8344f0dc | normallash | overlayspec
+  | 6 | [face #0]: 92720b3b-02ee-c700-0528-60ac8344f0dc | normallash | overlayspec
+  | 7 | [face #0]: 92720b3b-02ee-c700-0528-60ac8344f0dc | normallash | overlayspec
 
 
 * | brow piercing bars right
