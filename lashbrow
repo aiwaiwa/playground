@@ -3,10 +3,10 @@
   | 1 | glint
   | 2 |
   | 3 |
-  | 4 | overlay | normaloverlay
-  | 5 | lashes | normallash | overlayspec
-  | 6 | lashes | normallash | overlayspec
-  | 7 | lashes | normallash | overlayspec
+  | 4 | TEMP3 | normaloverlay
+  | 5 | TEMP0 | TEMP1 | overlayspec
+  | 6 | TEMP0 | TEMP1 | overlayspec
+  | 7 | TEMP0 | TEMP1 | overlayspec
 
 
 * | brow piercing bars right
