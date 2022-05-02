@@ -24,7 +24,7 @@ Currently it is **undefined** which file to pick if there is several valid match
 
 Comment separator is a double forward slashes (`//`). Any line beginning with two forward slashes (`//`) is a full comment line and will be ignored by the file parser. Full comment lines can have white space character(s) in front of the `//`. Full comment lines do not contribute to block separations, described later, so they can be freely used anywhere within the file without affecting how the blocks start and end.
 
-* A comment can also appear anywhere within the lines. Everything after `//` will be ignored. This may be used to temporarily disable the rest of the line, or to provide a comment.
+* A comment can also appear anywhere after meaningful characters. Everything after `//` will be ignored. This may be used to temporarily disable the rest of the line, or to provide a comment.
 
 ### Blocks
 
@@ -38,7 +38,7 @@ Every block, line by line, consist of:
   * Each attachment name follows the same rules as the File Name, described above.
   * Spaces around `|` may be added for readability.
   * The product name (matching the file name) itself can be a sole rule requirement, which would basically define a default set of textures for the worn product.
-    * An alias for the product name is a one asterisk `*` symbol. This is helpful as it works out-of-box when the file name changes, which otherwise would require renaming every instance of the product name in the rule lines.
+    * An alias for the product name is an asterisk `*` symbol. This is helpful as it works out-of-box when the file name changes, which otherwise would require renaming every instance of the product name in the rule lines.
     * This rule will have no affect on the product if it is simply instantiated on the ground.
 
 ##### Examples
@@ -57,13 +57,17 @@ Each line after the first in the block describes a texture data until the block 
 
 Each line consists of `|`-separated fields (spaces around `|` may be added for readability):
 
-* `<linkNameAlias>` - a domain-specific alias for a link name. Currently simply matches the link name (first one found in the link-set with this name wins).
-  * Parent prim alias - where the in-world script resides - either an empty value or an asterisk symbol (`*`).
-* `|` character as delimiter.
-* `<faceIndex>` - an integer between `0` and `7`.
-* `|` character as delimiter.
-* **Diffuse Texture**. Either an UUID or a name of a texture inventory item placed along with the in-world script. The name can contain spaces.
+```
+LinkName | FaceIndex | Diffuse | Normal | Specular 
+```
+
+* **LinkName** - Matches the link name (first one found in the link-set with this name wins).
+  * There is a parent prim alias: Use either spaces, or an asterisk symbol (`*`).
+* **FaceIndex** - an integer between `0` and `7`.
+* **Diffuse**. Either an UUID or a name of a texture inventory item placed along with the in-world script. The name can contain spaces.
   * Empty value is treated as a **transparent texture** plus **Alpha Mode** set to Masking 255 (`/m255` suffix).
+  * The following special local textures will be transformed into current UUIDs, taken from the Local Texture Helper:
+    * `TEMP0`, `TEMP1`, ... `TEMP5`. These can be used not only in Diffuse, but also Normal and Specular Texture zones.
   * The following special baked textures names (upper case only!) are transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), if another suffix is not specifically mentioned:
     * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
   * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
@@ -72,16 +76,15 @@ Each line consists of `|`-separated fields (spaces around `|` may be added for r
     * `/b` - **Alpha Blending**.
       * If the suffix is missing, `/b` is auto-applied to all non-empty texture values.
     * `/m200` - **Alpha Masking** with a number between `0` and `255`.
-      * If the suffix is missing, `/m255` is auto-applied to all empty texture value.
+      * If the suffix is missing, `/m255` is auto-applied to all empty texture values.
       * Spaces between `/`, `m` and the number are ignored.
     * `/e` - **Emissive**.
-* `|` character as delimiter.
-* **Normal Texture** - follows the same rule as for Diffuse Texture (except the `/` suffix portion).
+* **Normal** - follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value will be treated as a command to **remove normal texture**. 
-* `|` character as delimiter.
-* **Specular Texture** - follows the same rule as for Diffuse Texture (except the `/` suffix portion).
+* **Specular** - follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value texture will be treated as a command to **remove specular texture**.
-* (Any additional data after any subsequent `|` delimiters will be ignored.)
+
+> (Any additional data after any subsequent `|` delimiters will be ignored.)
 
 ##### Examples
 
