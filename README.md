@@ -69,7 +69,7 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
   * The following special local textures will be transformed into current UUIDs, taken from the Local Texture Helper:
     * `TEMP0`, `TEMP1`, ... `TEMP5`. These can be used not only in Diffuse, but also Normal and Specular Texture zones.
   * The following special baked textures names (upper case only!) are transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), if another suffix is not specifically mentioned:
-    * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
+    * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`. These will be interpreted as special names in the **Diffuse** zones only.
   * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
     * `/n` - **None** (alpha channel is ignored).
       * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
