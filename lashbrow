@@ -4,9 +4,9 @@
   | 2 |
   | 3 |
   | 4 | TEMP3 | normaloverlay | overlayspec
-  | 5 | TEMP0 | TEMP1 | lashspec
-  | 6 | TEMP0 | TEMP1 | lashspec
-  | 7 | TEMP0 | TEMP1 | lashspec
+  | 5 | TEMP0 | TEMP1 | TEMP1
+  | 6 | TEMP0 | TEMP1 | TEMP1
+  | 7 | TEMP0 | TEMP1 | TEMP1
 
 
 * | brow piercing bars right
