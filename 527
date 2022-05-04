@@ -2,11 +2,11 @@
 * | 0 | 95741b5c-6583-52a3-da4f-d4bf659e899b
 
 *
-ax_eye | 0 | TEMP5 | TEMP1 | temp0
+ax_eye | 0 | TEMP5 | TEMP1 | TEMP0
 
 *
 lashbrow | 0 | 003_ax_br
-lashbrow | 1 | TEMP4 | TEMP1 | TEMP2
+lashbrow | 1 | TEMP4 | TEMP1 | TEMP4
 lashbrow | 2 |
 lashbrow | 3 |
 lashbrow | 4 | TEMP3 | normaloverlay | overlayspec
