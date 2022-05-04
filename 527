@@ -2,11 +2,11 @@
 * | 0 | 95741b5c-6583-52a3-da4f-d4bf659e899b
 
 *
-ax_eye | 0 | 6ce09633-3c2c-15dc-1499-572a5a8207a3 | TEMP1 | TEMP0
+ax_eye | 0 | 6ce09633-3c2c-15dc-1499-572a5a8207a3 | TEMP1 | TEMP2
 
 *
 lashbrow | 0 | 003_ax_br
-lashbrow | 1 | TEMP4 | TEMP3 | TEMP4
+lashbrow | 1 | TEMP0 | TEMP1 | TEMP2
 lashbrow | 2 |
 lashbrow | 3 |
 lashbrow | 4 | c7cd9a45-3f26-c5da-14c9-d9afddb180e7 | normaloverlay | overlayspec
