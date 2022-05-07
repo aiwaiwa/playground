@@ -9,10 +9,10 @@ lashbrow | 0 | 003_ax_br
 lashbrow | 1 | 3829c916-0862-257a-2b34-00736abcba2d | 7981dfc9-1d83-080b-b745-8a37e89bd855 | 4659ec5a-e96d-a98a-56a4-642488b5593f 
 lashbrow | 2 |
 lashbrow | 3 |
-lashbrow | 4 | TEMP1 | normaloverlay | overlayspec
-lashbrow | 5 | 1beaf935-ac6a-48c6-5ade-9f218419ca2c | TEMP1 | TEMP0    
-lashbrow | 6 | 1beaf935-ac6a-48c6-5ade-9f218419ca2c | TEMP1 | TEMP0
-lashbrow | 7 | 1beaf935-ac6a-48c6-5ade-9f218419ca2c | TEMP1 | TEMP0 
+lashbrow | 4 | overlay | normaloverlay | overlayspec
+lashbrow | 5 | TEMP1 | TEMP1 | TEMP1    
+lashbrow | 6 | TEMP1 | TEMP1 | TEMP1
+lashbrow | 7 | TEMP1 | TEMP1 | TEMP1 
 
 
 * | brow piercing bars right
