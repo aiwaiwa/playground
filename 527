@@ -1,5 +1,5 @@
 *
-* | 0 | EYES | TEMP3 | TEMP4
+* | 0 | HEAD | TEMP3 | TEMP4
 
 *
 ax_eye | 0 | TEMP5 | 56d661f8-27d1-991d-d4d9-4f8b77ea92df | 6bcb20a5-bbf7-be37-3429-af71612e8849
@@ -9,10 +9,10 @@ lashbrow | 0 | 003_ax_br
 lashbrow | 1 | GLINT | 7981dfc9-1d83-080b-b745-8a37e89bd855 | 4659ec5a-e96d-a98a-56a4-642488b5593f 
 lashbrow | 2 |
 lashbrow | 3 |
-lashbrow | 4 | TEMP2 | normaloverlay | overlayspec
-lashbrow | 5 | TEMP1 | TEMP1 | TEMP1    
-lashbrow | 6 | TEMP1 | TEMP1 | TEMP1
-lashbrow | 7 | TEMP1 | TEMP1 | TEMP1 
+lashbrow | 4 | OVERLAY | normaloverlay | overlayspec
+lashbrow | 5 | LASHES | TEMP1 | TEMP1    
+lashbrow | 6 | LASHES | TEMP1 | TEMP1
+lashbrow | 7 | LASHES | TEMP1 | TEMP1 
 
 
 * | brow piercing bars right
