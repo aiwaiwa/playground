@@ -10,9 +10,9 @@ lashbrow | 1 | GLINT | 7981dfc9-1d83-080b-b745-8a37e89bd855 | 4659ec5a-e96d-a98a
 lashbrow | 2 |
 lashbrow | 3 |
 lashbrow | 4 | OVERLAY | normaloverlay | overlayspec
-lashbrow | 5 | LASHES | TEMP1 | TEMP1    
-lashbrow | 6 | LASHES | TEMP1 | TEMP1
-lashbrow | 7 | LASHES | TEMP1 | TEMP1 
+lashbrow | 5 | LASHES | LASHES | LASHES    
+lashbrow | 6 | LASHES | LASHES | LASHES
+lashbrow | 7 | LASHES | LASHES | LASHES 
 
 
 * | brow piercing bars right
