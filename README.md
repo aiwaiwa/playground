@@ -34,10 +34,11 @@ Every block, line by line, consist of:
 
 #### First Line - Attachment Rule
 
-* Attachment name or several attachment names. Behavior described below first line will apply to all attachments listed here, separated by `|` character.
-  * Each attachment name follows the same rules as the File Name, described above.
-  * Spaces around `|` may be added for readability.
-  * The product name (matching the file name) itself can be a sole rule requirement, which would basically define a default set of textures for the worn product.
+Attachment name or several attachment names. Behavior described below first line will apply to all attachments listed on this line, separated by `|` character, when all of them are found attached to the body. In other words, this line set (L), in relation to all currently worn attachments (A) will be only used in calculations, when L is a [subset](https://en.wikipedia.org/wiki/Subset) of A (L⊆A). HUDs cannot be counted as attachments.
+
+* Each attachment name follows the same rules as the File Name, described above.
+* Spaces around `|` may be added for readability.
+* The product name (matching the file name) itself can be a sole rule requirement, which would basically define a default set of textures for the worn product.
     * An alias for the product name is an asterisk `*` symbol. This is helpful as it works out-of-box when the file name changes, which otherwise would require renaming every instance of the product name in the rule lines.
     * This rule will have no affect on the product if it is simply instantiated on the ground.
 
@@ -64,21 +65,32 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
 * **LinkName** - Matches the link name (first one found in the link-set with this name wins).
   * There is a parent prim alias: Use either spaces, or an asterisk symbol (`*`).
 * **FaceIndex** - an integer between `0` and `7`.
-* **Diffuse**. Either an UUID or a name of a texture inventory item placed along with the in-world script. The name can contain spaces.
+* **Diffuse**. Either:
+  *  A UUID.
+  *  A name of a texture at:
+     *  Prim content, placed along with the in-world script.
+     *  Texture Helper HUD (worn or rezzed), where the name of the texture will be matched to a slot name, and return currently selected texture for the slot.
+         * The following postifxes after the name on the line (before the **Alpha Mode** changer) - `[d]`, `[n]` or `[s]` - have a special meaning. They get removed to match with the slot names in the Texture Helper HUD, and only used to decide, which of the 3 sub-layers to use, as one mesh face may receive Diffuse, Normal and Specular textures in the Edit Window. If no postifx is provided, it will be assumed that, depending on where the name is used on the line: `[d]` will be used for **Diffuse**, `[n]` for **Normal** and `[s]` for **Specular** section of this line. This default behavior allows to specify the same name on all 3 columns, without bothering with the suffixes. At the same time it gives a possibility of using a texture from another sub-layer for different purpose. Examples:
+             * ` link_name | 0 | GLINT | GLINT | GLINT ` - find a slot with name `GLINT`, take Diffuse layer texture of currently chosen texure for the slot, apply to Diffuse layer on the `link_name`, face `0`, repeat for Normal and Specular by correspondingly applying Normal and Specular sub-layers.
+             * ` link_name | 0 | GLINT | GLINT | GLINT[d] ` - in this case for specular on `link_name`, face `0`, the value will be taken from the slot `GLINT`'s diffuse layer instead of default specular layer.
+             * ` link_name | 0 | GLINT ` - this means avoid applying Normal or Specular values.
+             * ` link_name | 0 | GLINT | GLINT_N[d] ` - this means to take for Normal a texture for a separately named slot (`GLINT_N`) and from its Diffuse sub-layer.
+         * Several rezzed or attached Texture Helper HUDs may return their results in unpredictable order, if they have same slot names.
+  * The following special names (upper case only) get transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), unless another suffix is specifically mentioned:
+      * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
+          * These will be interpreted as special names in the **Diffuse** zones only.
   * Empty value is treated as a **transparent texture** plus **Alpha Mode** set to Masking 255 (`/m255` suffix).
+  * After trying to locate name inside 
   * The following special local textures will be transformed into current UUIDs, taken from a currently attached Local Texture Helper:
-    * `TEMP0`, `TEMP1`, ... `TEMP5`. These can be used not only in **Diffuse**, but also in **Normal** and **Specular** Texture zones.
-      * The absense of a local texture will be translated into a transparent texture on **Diffuse** zone, and None texture for both **Normal** and **Specular** zones.
-  * The following special baked textures names (upper case only!) are transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), if another suffix is not specifically mentioned:
-    * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`. These will be interpreted as special names in the **Diffuse** zones only.
+  * The absense of a local texture will be translated into a transparent texture on **Diffuse** zone, and None texture for both **Normal** and **Specular** zones.
   * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
     * `/n` - **None** (alpha channel is ignored).
-      * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
+        * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
     * `/b` - **Alpha Blending**.
-      * If the suffix is missing, `/b` is auto-applied to all non-empty texture values.
+        * If the suffix is missing, `/b` is auto-applied to all non-empty texture values.
     * `/m200` - **Alpha Masking** with a number between `0` and `255`.
-      * If the suffix is missing, `/m255` is auto-applied to all empty texture values.
-      * Spaces between `/`, `m` and the number are ignored.
+        * If the suffix is missing, `/m255` is auto-applied to all empty texture values.
+        * Spaces between `/`, `m` and the number are allowed and will be ignored.
     * `/e` - **Emissive**.
 * **Normal** - follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value will be treated as a command to **remove normal texture**. 
