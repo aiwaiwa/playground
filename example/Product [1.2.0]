@@ -1,6 +1,6 @@
 Peach
 A | 0 | BAKED_AUX1
-A | 2 | TEMP0[d] |               | TEMP0[d]
+A | 2 | TEMP0[n] |               | TEMP0[d]
 
 Apple
 B | 2 | 88ae580d-b3fb-ccb5-6a0e-6eaf19deb934
