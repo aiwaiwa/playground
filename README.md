@@ -80,8 +80,6 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
       * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
           * These will be interpreted as special names in the **Diffuse** zones only.
   * Empty value is treated as a **transparent texture** plus **Alpha Mode** set to Masking 255 (`/m255` suffix).
-  * After trying to locate name inside 
-  * The following special local textures will be transformed into current UUIDs, taken from a currently attached Local Texture Helper:
   * The absense of a local texture will be translated into a transparent texture on **Diffuse** zone, and None texture for both **Normal** and **Specular** zones.
   * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
     * `/n` - **None** (alpha channel is ignored).
