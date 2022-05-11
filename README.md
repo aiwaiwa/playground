@@ -80,8 +80,6 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
   * The following special names (upper case only) get transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), unless another suffix is specifically mentioned:
       * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
           * These will be interpreted as special names in the **Diffuse** zones only.
-  * Empty value is treated as a command to apply **transparent texture** with **Alpha Mode** set to Masking 255 (`/m255` suffix).
-  * The absense of a local texture will be translated into a transparent texture on **Diffuse** zone, and None texture for both **Normal** and **Specular** zones.
   * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
     * `/n` - **None** (alpha channel is ignored).
         * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
@@ -93,10 +91,23 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
     * `/e` - **Emissive**.
 * **Normal** zone follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value will be treated as a command to **remove normal texture**.
+  * The absense of a texture currently means skip changing it.
 * **Specular** zone follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value will be treated as a command to **remove specular texture**.
+  * The absense of a texture currently means skip changing it.
 
 > (Any additional data after any subsequent `|` delimiters will be ignored.)
+
+##### Empty Values
+
+Empty value is treated as a command to apply:
+* **Diffuse** zone: **Transparent Texture** with **Alpha Mode** set to Masking 255 (`/m255` suffix).
+* **Normal** zone: Set to None.
+* **Specular** zone: Set to None.
+
+##### Absent Textures
+
+The absense of a named texture currently results in skipping the action of changing it. For instance, if a Texture Helper HUD is absent, textures named according to the HUD's slots won't affect corresponding slots. **This may change in the future.**
 
 ##### Examples
 
