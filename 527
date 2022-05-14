@@ -23,16 +23,16 @@ lashbrow | 2 | Ax_brow piercing bars right_shadow
 lashbrow | 3 | Ax_brow piercing bars left_shadow
 
 * 
-ax_lobes | 0 | HEAD |  |
+ax_lobes | 0 | EARS |  |
 
 * 
-ax_gauge_lobes | 0 | HEAD |  |
+ax_gauge_lobes | 0 | GAUGES |  |
 
 * 
-normal_tips | 0 | HEAD |  |
+normal_tips | 0 | EARS |  |
 
 * 
-elftips | 0 | HEAD |  |
+elftips | 0 | ELFTIPS |  |
 
 * 
 lips | 0 | LIPS |  |
