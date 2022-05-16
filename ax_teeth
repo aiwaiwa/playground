@@ -1,2 +1,4 @@
 *
-* | 0 | TEETH /m255  | TEETH | TEETH
+* | 0 | TEETH /n  | TEETH | TEETH
+* | 1 | GUMS /n | GUMS | GUMS
+* | 3 | TONGUE /n | TONGUE | TONGUE
