@@ -1,4 +1,11 @@
+* 
+gums | 0 | GUMS m/255 | GUMS | GUMS
+
 *
-* | 0 | TEETH /n  | TEETH | TEETH
-* | 1 | GUMS /n | GUMS | GUMS
-* | 3 | TONGUE /n | TONGUE | TONGUE
+normal_teeth | 0 | TEETH m/255 | TEETH | TEETH
+
+*
+vamp_teeth | 0 | VTEETH m/255 | VTEETH | VTEETH
+
+*
+crooked_teeth | 0 | CTEETH m/255 | CTEETH | CTEETH
