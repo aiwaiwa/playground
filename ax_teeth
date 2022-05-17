@@ -1,11 +1,11 @@
 *
-* | 0 | GUMS /m255 | GUMS | GUMS
+* | 0 | GUMS /n | GUMS | GUMS
 
 *
-normal_teeth | 0 | TEETH /m255 | TEETH | TEETH
+normal_teeth | 0 | TEETH /n | TEETH | TEETH
 
 *
-vamp_teeth | 0 | VTEETH /m255 | VTEETH | VTEETH
+vamp_teeth | 0 | VTEETH /n | VTEETH | VTEETH
 
 *
-crooked_teeth | 0 | CTEETH /m255 | CTEETH | CTEETH
+crooked_teeth | 0 | CTEETH /n | CTEETH | CTEETH
