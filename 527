@@ -1,5 +1,6 @@
 *
 * | 0 | HEAD /m255  | HEAD | HEAD
+* | 1 | TEST | TEST | TEST
 
 *
 ax_eye | 0 | EYE /m255 | EYE | 6bcb20a5-bbf7-be37-3429-af71612e8849 
@@ -7,13 +8,12 @@ ax_eye | 0 | EYE /m255 | EYE | 6bcb20a5-bbf7-be37-3429-af71612e8849
 *
 lashbrow | 0 | BROWS | BROWS | BROWS
 lashbrow | 1 | GLINT /b | 436ec0c1-d0eb-2140-69f0-fdd32be5f92d | 6bcb20a5-bbf7-be37-3429-af71612e8849
-lashbrow | 2 |
-lashbrow | 3 |
-lashbrow | 4 | OVERLAY /b | OVERLAY | OVERLAY
-lashbrow | 5 | LASHES /b | LASHES | LASHES    
-lashbrow | 6 | LASHES /b | LASHES | LASHES
-lashbrow | 7 | LASHES /b | LASHES | LASHES 
-
+lashbrow | 2 | 
+lashbrow | 3 | OVERLAY /b | OVERLAY | OVERLAY
+lashbrow | 4 | LASHES /b | LASHES | LASHES    
+lashbrow | 5 | LASHES /b | LASHES | LASHES
+lashbrow | 6 | LASHES /b | LASHES | LASHES 
+lashbrow | 7 | LASHES /b | LASHES | LASHES
 
 * | brow piercing bars right
 lashbrow | 2 | Ax_brow piercing bars right_shadow
