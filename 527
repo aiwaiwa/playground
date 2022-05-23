@@ -25,7 +25,7 @@ lashbrow | 2 | Ax_brow piercing bars right_shadow
 lashbrow | 3 | Ax_brow piercing bars left_shadow
 
 * 
-ax_lobes | 0 | HEAD /n |  |
+ax_lobes | EARS | EARS | EARS |
 
 * 
 ax_gauge_lobes | 0 | HEAD /n |  |
@@ -34,7 +34,7 @@ ax_gauge_lobes | 0 | HEAD /n |  |
 normal_tips | 0 | HEAD /n |  |
 
 * 
-elftips | 0 | HEAD /n |  |
+elftips | ELFTIPS | ELFTIPS | ELFTIPS |
 
 * 
 ax_lips | 0 | LIPS |  |
