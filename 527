@@ -37,3 +37,13 @@ elftips | 0 | HEAD /n |  |
 
 * 
 ax_lips | 0 | LIPS |  |
+
+*
+beard | 0 | BEARD | BEARD | BEARD
+beard   | 1 | Ax_LFshadow
+beard   | 2 | Ax_LFshadow
+beard   | 3 | Ax_LFshadow
+beard   | 4 | Ax_LFshadow
+beard  | 5 | Ax_LFshadow 
+beard   | 6 | BEARD | BEARD | BEARD
+beard  | 7 | BEARD | BEARD | BEARD
