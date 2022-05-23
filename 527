@@ -34,7 +34,7 @@ ax_gauge_lobes | 0 | HEAD /n |  |
 normal_tips | 0 | HEAD /n |  |
 
 * 
-elftips | ELFTIPS / | ELFTIPS | ELFTIPS |
+elftips | ELFTIPS /m255 | ELFTIPS | ELFTIPS |
 
 * 
 ax_lips | 0 | LIPS | LIPS |
