@@ -4,7 +4,7 @@
 
 *
 ax_eye         | 0 | EYE /m255 | EYE | 6bcb20a5-bbf7-be37-3429-af71612e8849 
-ax_eye_concave | 0 | EYEC /m256a50c200,200,200 | EYEC | EYEC /g100c100,100,255
+ax_eye_concave | 0 | EYEC /m255a50c200,200,200 | EYEC | EYEC /g100c100,100,255
 
 *
 lashbrow | 0 | BROWS | BROWS | BROWS
