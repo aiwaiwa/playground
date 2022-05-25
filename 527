@@ -28,10 +28,10 @@ lashbrow | 3 | Ax_brow piercing bars left_shadow
 ax_lobes | 0 | EARS | EARS | EARS |
 
 * 
-ax_gauge_lobes | 0 | HEAD /n |  |
+ax_gauge_lobes | 0 | HEAD /n | HEAD | HEAD
 
 * 
-normal_tips | 0 | HEAD /n |  |
+normal_tips | 0 | HEAD /n | HEAD | HEAD
 
 * 
 elftips | 0 | ELFTIPS /m255 | ELFTIPS | ELFTIPS |
