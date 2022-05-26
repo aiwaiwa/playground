@@ -80,21 +80,41 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
   * The following special names (upper case only) get transformed into their corresponding internal UUIDs and **Alpha Mode** None (`/n` suffix), unless another suffix is specifically mentioned:
       * `BAKED_HEAD`, `BAKED_UPPER`, `BAKED_LOWER`, `BAKED_EYES`, `BAKED_SKIRT`, `BAKED_HAIR`, `BAKED_LEFTARM`, `BAKED_LEFTLEG`, `BAKED_AUX1`, `BAKED_AUX2`, `BAKED_AUX3`.
           * These will be interpreted as special names in the **Diffuse** zones only.
-  * Optional suffix starting with a singular `/` is treated as an **Alpha Mode** changer. If it doesn't match any of the following patterns, it is considered simply a remaing part of the texture name:
-    * `/n` - **None** (alpha channel is ignored).
-        * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
-    * `/b` - **Alpha Blending**.
-        * If the suffix is missing, `/b` is auto-applied to all non-empty texture values.
-    * `/m200` - **Alpha Masking** with a number between `0` and `255`.
-        * If the suffix is missing, `/m255` is auto-applied to all empty texture values.
-        * Spaces between `/`, `m` and the number are allowed and will be ignored.
-    * `/e` - **Emissive**.
+  * Optional suffix starts with the last singular `/`, followed by a list of hints. If any of them don't follow the rules, the `/` suffix falls back to be part of the texture name. Spaces are not required, but can be added for clarity. Example: `/m100 c100,100,100 a50`. Hints described:
+    * **Alpha Mode** changers (if several mentioned, the last wins):
+      * `n` - **None** (alpha channel is ignored).
+          * If the suffix is missing, `/n` is auto-applied to all special `BAKED_` names listed above.
+      * `b` - **Alpha Blending**.
+          * If the suffix is missing, `/b` is auto-applied to all non-empty texture values.
+      * `m255` - **Alpha Masking** with a number between `0` and `255`.
+          * If the suffix is missing, `/m255` is auto-applied to all empty texture values.
+      * `e` - **Emissive**.
+    * **Color**
+      * `c255,255,255` - color changer in RGB format (each value within 0..255 range).
+        * If the color is missing, it defaults to `255,255,255`.
+      * When interacting with the Texture HUD, when both **Color** and **Alpha** hints are missing, those values will be derived from the Texture HUD (provided the name is found among the slots).
+    * **Alpha**
+      * `a100` - alpha changer (value should be within 0..100 range).
+        * If missing, will default to `100` (opaque).
+        * `t100` - transparency changer - same as alpha changer, simply works the opposite way (`a0` equals `t100`).
+        
 * **Normal** zone follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value will be treated as a command to **remove normal texture**.
-  * The absense of a texture currently means skip changing it.
-* **Specular** zone follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
+  * The absense of a named texture among the content and Texture HUD slots currently means skip changing it.
+* **Specular** zone follows the same rule as for Diffuse Texture (except special `BAKED_` values as well as `/` suffix, which are different in **Specular**).
   * Empty value will be treated as a command to **remove specular texture**.
-  * The absense of a texture currently means skip changing it.
+  * The absense of a named texture among the content and Texture HUD slots currently means skip changing it.
+  * Optional suffix starts with the last singular `/`, followed by a list of hints. If any of them don't follow the rules, the `/` suffix falls back to be part of the texture name. Spaces are not required, but can be added for clarity. Example: `/g100 e5 c255,255,255`. Hints described:
+    * **Glossiness**
+      * `g255` - glossiness changer (value should be within 0..255 range).
+        * If missing, will default to `51`.
+    * **Environment**
+      * `e255` - environment changer (value should be within 0..255 range).
+        * If missing, will default to `0`.
+    * **Color**
+      * `c255,255,255` - color changer in RGB format (each value within 0..255 range).
+        * If the color is missing, it defaults to `255,255,255`.
+      * When interacting with the Texture HUD, when both **Color** and **Alpha** hints are missing, those values will be derived from the Texture HUD (provided the name is found among the slots).
 
 > (Any additional data after any subsequent `|` delimiters will be ignored.)
 
@@ -107,12 +127,13 @@ Empty value is treated as a command to apply:
 
 ##### Absent Textures
 
-The absense of a named texture currently results in skipping the action of changing it. For instance, if a Texture Helper HUD is absent, textures named according to the HUD's slots won't affect corresponding slots. **This may change in the future.**
+* The absense of a named texture among the content and Texture HUD slots currently means skip changing it. For instance, if a Texture Helper HUD is absent, textures named according to the HUD's slots won't affect corresponding slots. **This may change in the future.**
 
 ##### Examples
 
 * `* | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9` - parent prim, face #0, diffuse map as provided UUID, other maps will be set to none.
 * `* | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 /m100` - parent prim, face #0, diffuse map as provided UUID with alpha mode set to masking 100, other maps will be set to none.
+* `* | 0 | HEAD /m255 c200,200,200` - parent prim, face #0, diffuse map taken from either HEAD texture in the prim content, or Texture HUD, with alpha mode set to masking 255, color 200,200,200, other maps will be set to none.
 * `* | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, face #0, diffuse map as provided UUID, normal map from inventory "normal_map_001", specular map will be set to none.
 * `Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #1, diffuse map `fluffy`, normal map set to none, specular map will be taken from the `fluffy_sp` inventory.
 * `Hair | 2` - prim `Hair`, face #1, apply transparent diffuse texture, and remove both normal and specular ones.
