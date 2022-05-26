@@ -3,7 +3,7 @@
 * | 1 | GUMS /m255 | GUMS | GUMS
 
 *
-normal_teeth | 0 | TEETH /n a50 c255,0,0 | TEETH | TEETH /g1
+normal_teeth | 0 | TEETH /n | TEETH | TEETH 
 
 *
 vamp_teeth | 0 | VTEETH /n | VTEETH | VTEETH
