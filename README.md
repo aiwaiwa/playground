@@ -101,7 +101,7 @@ LinkName | FaceIndex | Diffuse | Normal | Specular
 * **Normal** zone follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
   * Empty value will be treated as a command to **remove normal texture**.
   * The absense of a named texture among the content and Texture HUD slots currently means skip changing it.
-* **Specular** zone follows the same rule as for Diffuse Texture (except special `BAKED_` values as well as `/` suffix, which are different in **Specular**).
+* **Specular** zone follows the same rule as for Diffuse Texture (except special `BAKED_` values as well as `/` suffix hints, which are different).
   * Empty value will be treated as a command to **remove specular texture**.
   * The absense of a named texture among the content and Texture HUD slots currently means skip changing it.
   * Optional suffix starts with the last singular `/`, followed by a list of hints. If any of them don't follow the rules, the `/` suffix falls back to be part of the texture name. Spaces are not required, but can be added for clarity. Example: `/g100 e5 c255,255,255`. Hints described:
@@ -135,7 +135,7 @@ Empty value is treated as a command to apply:
 * `* | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 /m100` - parent prim, face #0, diffuse map as provided UUID with alpha mode set to masking 100, other maps will be set to none.
 * `* | 0 | HEAD /m255 c200,200,200` - parent prim, face #0, diffuse map taken from either HEAD texture in the prim content, or Texture HUD, with alpha mode set to masking 255, color 200,200,200, other maps will be set to none.
 * `* | 0 | 25d24fe7-805a-4cfb-8cf7-12cfc8ca8ff9 | normal_map_001` - parent prim, face #0, diffuse map as provided UUID, normal map from inventory "normal_map_001", specular map will be set to none.
-* `Hair | 1 | fluffy | | fluffy_sp` - prim `Hair`, face #1, diffuse map `fluffy`, normal map set to none, specular map will be taken from the `fluffy_sp` inventory.
+* `Hair | 1 | fluffy | | fluffy_sp /g100` - prim `Hair`, face #1, diffuse map `fluffy`, normal map set to none, specular map will be taken from `fluffy_sp` and glossiness set to 100.
 * `Hair | 2` - prim `Hair`, face #1, apply transparent diffuse texture, and remove both normal and specular ones.
 
 ### Repetition of the same definition
