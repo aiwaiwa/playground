@@ -28,8 +28,10 @@ lashbrow | 3 | Ax_brow piercing bars left_shadow
 ax_lobes | 0 | EARS | EARS | EARS |
 
 * 
-ax_gauge_lobes | 0 | HEAD /n | HEAD | HEAD
-ax_gauge_lobes | 1 | EARJEWELSHADOWS | EARJEWELSHADOWS | EARJEWELSHADOWS
+ax_gauge_lobes | 0 | EARJEWELMETAL | EARJEWELMETAL | EARJEWELMETAL
+ax_gauge_lobes | 1 | HEAD /n | HEAD | HEAD
+ax_gauge_lobes | 2 | EARJEWELSHADOWS | EARJEWELSHADOWS | EARJEWELSHADOWS
+ax_gauge_lobes | 3 | EARJEWELMETAL | EARJEWELMETAL | EARJEWELMETAL
 
 * 
 normal_tips | 0 | HEAD /n | HEAD | HEAD
