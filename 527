@@ -29,6 +29,7 @@ ax_lobes | 0 | EARS | EARS | EARS |
 
 * 
 ax_gauge_lobes | 0 | HEAD /n | HEAD | HEAD
+ax_gauge_lobes | 1 | EARJEWELSHADOWS | EARJEWELSHADOWS | EARJEWELSHADOWS
 
 * 
 normal_tips | 0 | HEAD /n | HEAD | HEAD
