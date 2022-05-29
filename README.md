@@ -62,6 +62,8 @@ Each line consists of `|`-separated fields (spaces around `|` may be added for r
 LinkName | FaceIndex | Diffuse | Normal | Specular 
 ```
 
+Only two first fields are required. The rest are called "zones", and if not mentioned, have their default meaning, explained at the [Empty Values](#empty-values) section.
+
 * **LinkName** - Matches the link name (first one found in the link-set with this name wins).
   * There is a parent prim alias: Use either spaces, or an asterisk symbol (`*`).
 * **FaceIndex** - an integer between `0` and `7`.
