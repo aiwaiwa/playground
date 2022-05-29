@@ -56,19 +56,20 @@ Attachment name or several attachment names. Behavior described below first line
 
 Each line after the first in the block describes a texture data until the block separator or the end of file. 
 
-Each line consists of `|`-separated fields (spaces around `|` may be added for readability):
+Each line consists of `|`-separated fields (spaces around `|` may be added for readability). They have the following meaning:
 
 ```
 LinkName | FaceIndex | Diffuse | Normal | Specular 
 ```
 
-Only two first fields are required. The rest are called "zones", and if not mentioned, have their default meaning, explained at the [Empty Values](#empty-values) section.
+Each field is described below. Only the first two fields are required. The rest (also called "zones") if not mentioned, considered Empty Values with a default behavior for each of the zones. Here's a detailed description of each of the fields:
 
 * **LinkName** - Matches the link name (first one found in the link-set with this name wins).
   * There is a parent prim alias: Use either spaces, or an asterisk symbol (`*`).
 * **FaceIndex** - an integer between `0` and `7`.
 * **Diffuse** zone may contain any of the following types of values:
-  *  A UUID.
+  *  Empty value. In this case it is treated as a command to apply **Transparent Texture** with **Alpha Mode** set to Masking 255 (`/m255` suffix).
+  *  A texture UUID.
   *  A name of a texture at:
      *  Prim content, placed along with the in-world script.
      *  Texture Helper HUD (worn or rezzed), where the name of the texture will be matched to a slot name, and return currently selected texture for the slot.
@@ -100,12 +101,13 @@ Only two first fields are required. The rest are called "zones", and if not ment
         * If missing, will default to `100` (opaque).
         * `t100` - transparency changer - same as alpha changer, simply works the opposite way (`a0` equals `t100`).
         
-* **Normal** zone follows the same rule as for Diffuse Texture (except the `/` suffix portion and special `BAKED_` values).
-  * Empty value will be treated as a command to **remove normal texture**.
-  * The absense of a named texture among the content and Texture HUD slots currently means skip changing it.
-* **Specular** zone follows the same rule as for Diffuse Texture (except special `BAKED_` values as well as `/` suffix hints, which are different).
-  * Empty value will be treated as a command to **remove specular texture**.
-  * The absense of a named texture among the content and Texture HUD slots currently means skip changing it.
+* **Normal** zone follows the same rule as for Diffuse Texture with the following exceptions:
+  * Empty value will be treated as a command to **remove normal texture**, as if setting to None in the Editor.
+  * The `BAKED_` values are not treated as special, and not get translated into their corresponding UUIDs.
+  * Optional suffix that starts with the last singular `/` is **ignored and considered part of the name**.
+* **Specular** zone follows the same rule as for Diffuse Texture with the following exceptions:
+  * Empty value will be treated as a command to **remove specular texture**, as if setting to None in the Editor.
+  * The `BAKED_` values are not treated as special, and not get translated into their corresponding UUIDs.
   * Optional suffix starts with the last singular `/`, followed by a list of hints. If any of them don't follow the rules, the `/` suffix falls back to be part of the texture name. Spaces are not required, but can be added for clarity. Example: `/g100 e5 c255,255,255`. Hints described:
     * **Glossiness**
       * `g255` - glossiness changer (value should be within 0..255 range).
@@ -120,16 +122,9 @@ Only two first fields are required. The rest are called "zones", and if not ment
 
 > (Any additional data after any subsequent `|` delimiters will be ignored.)
 
-##### Empty Values
-
-Empty value is treated as a command to apply:
-* **Diffuse** zone: **Transparent Texture** with **Alpha Mode** set to Masking 255 (`/m255` suffix).
-* **Normal** zone: Set to None.
-* **Specular** zone: Set to None.
-
 ##### Absent Textures
 
-* The absense of a named texture among the content and Texture HUD slots currently means skip changing it. For instance, if a Texture Helper HUD is absent, textures named according to the HUD's slots won't affect corresponding slots. **This may change in the future.**
+* The absense of a named texture among the content and Texture HUD slots currently means skip changing it. For instance, if a Texture Helper HUD is not attached at all, the textures named according to the HUD's slots won't affect corresponding slots. **This may change in the future.**
 
 ##### Examples
 
