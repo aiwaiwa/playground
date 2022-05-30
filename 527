@@ -34,10 +34,10 @@ ax_gauge_lobes | 2 | EARMETALS | EARMETALS | EARMETALS
 ax_gauge_lobes | 3 | EARMETALS | EARMETALS | EARMETALS
 
 * 
-normal_tips | 0 | HEAD /m255 | HEAD | HEAD
+normal_tips | 0 | EARS /m255 | EARS | EARS
 
 * 
-elftips | 0 | ELFTIPS /m255 | ELFTIPS | ELFTIPS |
+elftips | 0 | HEAD /n | HEAD | HEAD |
 
 * 
 ax_lips | 0 | LIPS | LIPS | LIPS
