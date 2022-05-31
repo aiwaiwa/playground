@@ -12,7 +12,7 @@ lashbrow | 1 | GLINT /b | GLINT | GLINT
 lashbrow | 2 | 
 lashbrow | 3 |
 lashbrow | 4 | OVERLAY /b | OVERLAY | OVERLAY
-lashbrow | 5 | LASHES /b | LASHES | LASHES    
+lashbrow | 5 | LASHES /b | LASHES | LASHES     
 lashbrow | 6 | LASHES /b | LASHES | LASHES
 lashbrow | 7 | LASHES /b | LASHES | LASHES 
 
@@ -38,6 +38,10 @@ normal_tips | 0 | EARS /m255 | EARS | EARS
 
 * 
 elftips | 0 | HEAD /n | HEAD | HEAD |
+
+* 
+elfjewels | 0 | elf_j_shadows | elf_j_shadows | elf_j_shadows |
+elfjewels | 1 | EARMETALS | EARMETALS | EARMETALS |
 
 * 
 ax_lips | 0 | LIPS | LIPS | LIPS
