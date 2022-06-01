@@ -29,7 +29,7 @@ ax_lobes | 0 | EARS /m255 | EARS | EARS |
 
 * 
 ax_gauge_lobes | 0 | HEAD /n | HEAD | HEAD
-ax_gauge_lobes | 1 | EARJEWELSHADOWS | EARJEWELSHADOWS | EARJEWELSHADOWS
+ax_gauge_lobes | 1 | gauge_shadow | gauge_shadow | gauge_shadow
 ax_gauge_lobes | 2 | EARMETALS | EARMETALS | EARMETALS
 ax_gauge_lobes | 3 | EARMETALS | EARMETALS | EARMETALS
 
