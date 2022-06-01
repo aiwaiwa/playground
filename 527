@@ -42,7 +42,7 @@ elftips | 0 | HEAD /n | HEAD | HEAD |
 
 * 
 ax_elft_j | 0 | EARMETALS | EARMETALS | EARMETALS |
-ax_elft_j | 1 | ax_elft_j_shadows | ax_elft_j_shadows | ax_elft_j_shadows |
+ax_elft_j | 1 | elft_j_shadows | elft_j_shadows | elft_j_shadows |
 
 * 
 ax_lips | 0 | LIPS | LIPS | LIPS
