@@ -1,7 +1,7 @@
 * 
 * | 0 | TONGUE | TONGUE | TONGUE
 * | 1 | TEETH /n | TEETH | TEETH 
-
+* | 2 | GUMS /n | GUMS | GUMS 
 *
 normal_teeth | 0 | TEETH /n | TEETH | TEETH 
 
